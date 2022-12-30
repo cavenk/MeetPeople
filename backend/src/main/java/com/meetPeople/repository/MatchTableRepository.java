@@ -23,7 +23,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
             nativeQuery = true,
             value =
                     "SELECT idMembreSecond " +
-                    "FROM matchTable " +
+                    "FROM MatchTable " +
                     "WHERE idMembreInitiateur = :id " +
                     "AND estAimerParInitiateur = 1 " +
                     "AND estAimerParSecond = 1 "
@@ -34,7 +34,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
             nativeQuery = true,
             value =
                     "SELECT * " +
-                            "FROM matchTable " +
+                            "FROM MatchTable " +
                             "WHERE idMembreInitiateur = :idMembreInitiateur " +
                             "AND idMembreSecond= :idMembreSecond "+
                             "AND estAimerParInitiateur = 1 " +
@@ -47,7 +47,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
             nativeQuery = true,
             value =
                     "SELECT * " +
-                            "FROM matchTable " +
+                            "FROM MatchTable " +
                             "WHERE idMembreInitiateur = :idMembreInitiateur "+
                             "AND idMembreSecond = :idMembreSecond "+
                             "OR (idMembreInitiateur= :idMembreSecond " +
@@ -61,7 +61,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
     @Query(
             nativeQuery = true,
             value =
-                    "UPDATE matchTable " +
+                    "UPDATE MatchTable " +
                             "SET estAimerParInitiateur = " +
                             "        CASE " +
                             "        WHEN estAimerParInitiateur <> :estAimerParInitiateur " +
@@ -88,7 +88,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
     @Query(
             nativeQuery = true,
             value =
-                    "UPDATE matchTable " +
+                    "UPDATE MatchTable " +
                             "SET estAimerParSecond = " +
                             "        CASE " +
                             "        WHEN estAimerParSecond <> :estAimerParInitiateur " +

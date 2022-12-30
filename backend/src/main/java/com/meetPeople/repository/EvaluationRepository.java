@@ -12,7 +12,7 @@ public interface EvaluationRepository extends JpaRepository<Evaluation, Integer>
             nativeQuery = true,
             value =
                     "SELECT * " +
-                            "FROM evaluation " +
+                            "FROM Evaluation " +
                             "WHERE idMembreEvaluateur = :idMembreEvaluateur "+
                             "AND idMembreEvalue = :idMembreEvalue "
 

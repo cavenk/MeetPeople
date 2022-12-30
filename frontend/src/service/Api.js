@@ -12,7 +12,7 @@ function postOption(data){
 
 export class Api{
 
-    static BASE_URL = "http://localhost:8080"
+    static BASE_URL = "https://meetpeople-372921.uc.r.appspot.com/"
 
     static register(data){
         return fetch(this.BASE_URL + "/auth/register", postOption(data))

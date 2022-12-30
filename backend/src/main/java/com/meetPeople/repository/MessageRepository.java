@@ -20,9 +20,9 @@ public interface MessageRepository extends JpaRepository<Message, Integer> {
     @Query(
             nativeQuery = true,
             value =
-                "SELECT DISTINCT idMembreRecevant FROM message WHERE idMembreExpediteur = :myId " +
+                "SELECT DISTINCT idMembreRecevant FROM Message WHERE idMembreExpediteur = :myId " +
                 "UNION " +
-                "SELECT DISTINCT idMembreExpediteur FROM message WHERE idMembreRecevant = :myId"
+                "SELECT DISTINCT idMembreExpediteur FROM Message WHERE idMembreRecevant = :myId"
     )
     List<Integer> getAllUserIdOfMyConversations(int myId);
 
@@ -30,7 +30,7 @@ public interface MessageRepository extends JpaRepository<Message, Integer> {
             nativeQuery = true,
             value =
                     "SELECT * " +
-                    "FROM message " +
+                    "FROM Message " +
                     "WHERE idMembreExpediteur IN (:myId , :userId) AND idMembreRecevant IN (:myId , :userId) " +
                     "ORDER BY idMessage DESC " +
                     "LIMIT 1"

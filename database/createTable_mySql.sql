@@ -56,7 +56,7 @@ constraint FK_Membre_numeroAdminDesactive foreign key(numeroAdminDesactive) refe
 
 CREATE TABLE Photo (
 idPhoto int auto_increment,
-cheminURL varchar(200) not null,
+cheminURL varchar(500) not null,
 estPhotoProfil bit not null default 0,
 idMembre int not null,
 constraint PK_Photo primary key(idPhoto),
